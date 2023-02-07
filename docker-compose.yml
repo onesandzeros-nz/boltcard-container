@@ -17,6 +17,7 @@ services:
       - DB_NAME=card_db
     expose: 
       - "9000"
+      - "9001"
     volumes:
       - ${PWD}/tls.cert:/boltcard/tls.cert
       - ${PWD}/admin.macaroon:/boltcard/admin.macaroon
@@ -48,8 +49,6 @@ services:
       - "8080:8080"
       - "443:443"
       - "443:443/udp"
-      - "8443:8443"
-      - "8443:8443/udp"
     volumes:
       - ${PWD}/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
