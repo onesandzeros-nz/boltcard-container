@@ -19,8 +19,7 @@ services:
       - "9000"
       - "9001"
     volumes:
-      - ${PWD}/tls.cert:/boltcard/tls.cert
-      - ${PWD}/admin.macaroon:/boltcard/admin.macaroon
+      - boltcard_files:/boltcard
     networks:
       - boltnet
   db:
@@ -74,6 +73,8 @@ services:
       - SS_DEFAULT_ADMIN_PASSWORD=${SS_DEFAULT_ADMIN_PASSWORD}
       - SS_DATABASE_CLASS=PostgreSQLDatabase
       - PORT=80
+    volumes:
+      - boltcard_files:${DOCUMENT_ROOT}/public/assets/boltcard
     expose:
       - "8080"
     networks:
@@ -86,3 +87,4 @@ volumes:
     external: true
   caddy_config:
   caddy_website:
+  boltcard_files:
