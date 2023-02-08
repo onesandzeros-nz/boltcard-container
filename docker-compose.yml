@@ -74,7 +74,7 @@ services:
       - SS_DATABASE_CLASS=PostgreSQLDatabase
       - PORT=80
     volumes:
-      - ./boltcard-gui:/var/www/html
+      # - ./boltcard-gui:/var/www/html
       - boltcard_files:/var/www/html/public/assets/boltcard
     expose:
       - "8080"
