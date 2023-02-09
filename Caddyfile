@@ -1,6 +1,6 @@
-https://boltcard.onesandzeros.nz {
+https://your.domain.com {
   reverse_proxy boltcard_main:9000
 }
-https://boltcard.onesandzeros.nz:8080 {
+https://your.domain.com:8080 {
   reverse_proxy boltcard_frontend:80
 }
