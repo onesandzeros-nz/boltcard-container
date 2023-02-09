@@ -21,7 +21,6 @@ $ sudo groupadd docker
 $ sudo usermod -aG docker ${USER}
 (log out & in again)
 $ docker volume create caddy_data
-$ docker volume create frontend_assets
 // add -d option for detached mode
 $ docker compose up
 ```

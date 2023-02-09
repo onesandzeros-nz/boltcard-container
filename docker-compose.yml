@@ -89,7 +89,6 @@ volumes:
   caddy_website:
   boltcard_files:
   frontend_assets:
-    external: true
   frontend_resources:
   frontend_graphql:
   frontend_graphql-generated:
