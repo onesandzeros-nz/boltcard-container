@@ -70,7 +70,11 @@ services:
       - SS_DATABASE_CLASS=PostgreSQLDatabase
     volumes:
       - boltcard_files:/var/www/html/public/assets/.protected/boltcard/a870de278b
-      - boltcard-gui_assets:/var/www/html/public/assets
+      - frontend_assets:/var/www/html/public/assets
+      - frontend_resources:/var/www/html/public/_resources
+      - frontend_graphql:/var/www/html/public/_graphql
+      - frontend_graphql-generated:/var/www/html/.graphql-generated
+      - frontend_vendor:/var/www/html/vendor
     expose:
       - "8080"
     networks:
@@ -84,5 +88,9 @@ volumes:
   caddy_config:
   caddy_website:
   boltcard_files:
-  boltcard-gui_assets:
+  frontend_assets:
     external: true
+  frontend_resources:
+  frontend_graphql:
+  frontend_graphql-generated:
+  frontend_vendor:
