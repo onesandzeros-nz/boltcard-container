@@ -1,9 +1,7 @@
 version: '3'
 services:
   boltcard:
-    build: 
-      context: ./boltcard
-      dockerfile: Dockerfile
+    image: chloej1100/boltcard
     container_name: boltcard_main
     depends_on:
       - db
@@ -33,9 +31,9 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - db-data:/var/lib/postgresql/data
-      - ./boltcard/select_db.sql:/docker-entrypoint-initdb.d/select_db.sql
-      - ./boltcard/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
-      - ./boltcard/settings.sql:/docker-entrypoint-initdb.d/settings.sql
+      - ./select_db.sql:/docker-entrypoint-initdb.d/select_db.sql
+      - ./create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
+      - ./settings.sql:/docker-entrypoint-initdb.d/settings.sql
     expose:
       - "5432"
     networks:
@@ -55,9 +53,7 @@ services:
     networks:
       - boltnet
   frontend:
-    build:
-      context: ./boltcard-gui
-      dockerfile: Dockerfile
+    image: chloej1100/boltcard-gui
     container_name: boltcard_frontend
     depends_on:
       - db
@@ -72,9 +68,7 @@ services:
       - SS_DEFAULT_ADMIN_USERNAME=${SS_DEFAULT_ADMIN_USERNAME}
       - SS_DEFAULT_ADMIN_PASSWORD=${SS_DEFAULT_ADMIN_PASSWORD}
       - SS_DATABASE_CLASS=PostgreSQLDatabase
-      - PORT=80
     volumes:
-      # - ./boltcard-gui:/var/www/html
       - boltcard_files:/var/www/html/public/assets/.protected/boltcard/a870de278b
     expose:
       - "8080"
