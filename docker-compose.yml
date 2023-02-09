@@ -70,6 +70,7 @@ services:
       - SS_DATABASE_CLASS=PostgreSQLDatabase
     volumes:
       - boltcard_files:/var/www/html/public/assets/.protected/boltcard/a870de278b
+      - boltcard-gui_assets:/var/www/html/public/assets
     expose:
       - "8080"
     networks:
@@ -83,3 +84,5 @@ volumes:
   caddy_config:
   caddy_website:
   boltcard_files:
+  boltcard-gui_assets:
+    external: true
