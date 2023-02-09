@@ -69,7 +69,7 @@ services:
       - SS_DEFAULT_ADMIN_PASSWORD=${SS_DEFAULT_ADMIN_PASSWORD}
       - SS_DATABASE_CLASS=PostgreSQLDatabase
     volumes:
-      - boltcard_files:/var/www/html/public/assets/.protected/boltcard/a870de278b
+      - boltcard_files:/boltcard_files
       - frontend_assets:/var/www/html/public/assets
       - frontend_resources:/var/www/html/public/_resources
       - frontend_graphql:/var/www/html/public/_graphql
