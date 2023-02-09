@@ -1,7 +1,7 @@
 version: '3'
 services:
   boltcard:
-    image: chloej1100/boltcard
+    image: chloej1100/boltcard:v1
     container_name: boltcard_main
     depends_on:
       - db
@@ -53,7 +53,7 @@ services:
     networks:
       - boltnet
   frontend:
-    image: chloej1100/boltcard-gui
+    image: chloej1100/boltcard-gui:v1
     container_name: boltcard_frontend
     depends_on:
       - db
