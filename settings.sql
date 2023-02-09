@@ -14,9 +14,9 @@ INSERT INTO settings (name, value) VALUES ('LN_MACAROON_FILE', '/boltcard/admin.
 INSERT INTO settings (name, value) VALUES ('FEE_LIMIT_SAT', '');
 INSERT INTO settings (name, value) VALUES ('FEE_LIMIT_PERCENT', '');
 INSERT INTO settings (name, value) VALUES ('LN_TESTNODE', '');
-INSERT INTO settings (name, value) VALUES ('FUNCTION_LNURLW', '');
-INSERT INTO settings (name, value) VALUES ('FUNCTION_LNURLP', '');
-INSERT INTO settings (name, value) VALUES ('FUNCTION_EMAIL', '');
+INSERT INTO settings (name, value) VALUES ('FUNCTION_LNURLW', 'ENABLE');
+INSERT INTO settings (name, value) VALUES ('FUNCTION_LNURLP', 'ENABLE');
+INSERT INTO settings (name, value) VALUES ('FUNCTION_EMAIL', 'DISABLE');
 INSERT INTO settings (name, value) VALUES ('AWS_SES_ID', '');
 INSERT INTO settings (name, value) VALUES ('AWS_SES_SECRET', '');
 INSERT INTO settings (name, value) VALUES ('AWS_SES_EMAIL_FROM', '');
